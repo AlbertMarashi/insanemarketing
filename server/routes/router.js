@@ -13,7 +13,6 @@ import {
     errorMiddleware,
     noWWW,
     renderer,
-    redirectArkovia,
     stateContext
 } from './middleware/index.js'
 
@@ -27,7 +26,6 @@ export default async () => router
     .use(compress())
     .use(stateContext)
     .use(errorMiddleware)
-    .use(redirectArkovia)
     .use(noWWW)
     .use(koaCookie.default())
     .use(bodyParser())
