@@ -1,0 +1,41 @@
+scalar Role
+scalar Date
+
+type User {
+	email: String
+	password: String
+    firstName: String
+    lastName: String
+	displayPicture: String
+	joined: Date
+	roles: [Role]
+	sessions: [Session]
+}
+
+type SignupInput {
+    email: String
+    password: String
+    firstName: String
+    lastName: String
+}
+
+type Session {
+	user: User
+	token: String
+	lastUsed: Date
+	agent: String
+}
+
+type Role {
+    name: String
+    slug: String
+    description: String
+    permissions: [Permission]
+    inherits: [Role]
+}
+
+type Permission {
+    slug: String
+    name: String
+    description: String
+}
